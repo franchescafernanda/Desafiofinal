@@ -1,4 +1,3 @@
-// NavBar.jsx
 import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
@@ -9,17 +8,14 @@ const NavBar = () => {
   ]
   return (
     <ul>
-      {locations.map((location, index) => (
+      {locations.map((location, index) => 
         <li key={`${location.name}-${index}`}>
-          <NavLink
-            activeClassName="active"
-            className="nav-link"
-            to={location.path}
-          >
+          <NavLink className={(isActive) => { isActive ? 'active' : null}} to={location.path}>
             {location.name}
           </NavLink>
         </li>
-      ))}
+      )
+      }
     </ul>
   )
 }
