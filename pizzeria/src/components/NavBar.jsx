@@ -7,16 +7,18 @@ const NavBar = () => {
     { path: '/cart', name: 'cart' },
   ]
   return (
-    <ul>
-      {locations.map((location, index) => 
-        <li key={`${location.name}-${index}`}>
-          <NavLink className={(isActive) => { isActive ? 'active' : null}} to={location.path}>
-            {location.name}
-          </NavLink>
-        </li>
-      )
-      }
-    </ul>
+    <div className="navbar">
+      <ul>
+        {locations.map((location, index) => 
+          <li key={`${location.name}-${index}`}>
+            <NavLink className={(isActive) => { isActive ? 'active' : null}} to={location.path}>
+              {location.name}
+            </NavLink>
+          </li>
+        )
+        }
+      </ul>
+    </div>
   )
 }
 

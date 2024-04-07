@@ -1,19 +1,19 @@
-import React from 'react';
-import { useMyContext } from '../Context/MyContext';
+import React from 'react'
+import { useMyContext } from '../Context/MyContext'
 
 const Cart = () => {
-  const { cartItems } = useMyContext();
+  const { cartItems } = useMyContext()
 
-  // Calcular el total
+  // Calculo del total
   const total = Object.entries(cartItems).reduce((acc, [itemName, quantity]) => {
-    // Supongamos que cada pizza tiene un precio de 10 dólares
-    const itemPrice = 10;
-    return acc + itemPrice * quantity;
-  }, 0);
+    // no me tomo el valor de price
+    const itemPrice = 10
+    return acc + itemPrice * quantity
+  }, 0)
 
   return (
     <div>
-      <h1>Carrito de compras</h1>
+      <h1 className='carrito'>Carrito de compras🛒</h1>
       <ul>
         {Object.entries(cartItems).map(([itemName, quantity]) => (
           <li key={itemName}>
@@ -23,7 +23,7 @@ const Cart = () => {
       </ul>
       <p>Total: ${total}</p>
     </div>
-  );
+  )
 }
 
-export default Cart;
+export default Cart
